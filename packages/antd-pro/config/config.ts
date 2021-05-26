@@ -68,7 +68,7 @@ export default defineConfig({
   extraBabelIncludes: [
     // '@monorepo/my-button',
     // 'another-button',
-    join(__dirname, 'another-button'),
+    join(__dirname, '..','..', 'another-button'),
   ],
   // chainWebpack: (memo) => {
   //   memo.module
