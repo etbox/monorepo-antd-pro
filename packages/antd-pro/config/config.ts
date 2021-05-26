@@ -66,15 +66,16 @@ export default defineConfig({
     },
   ],
   extraBabelIncludes: [
-    '@monorepo/my-button',
-    'another-button',
+    // '@monorepo/my-button',
+    // 'another-button',
+    join(__dirname, 'another-button'),
   ],
-  chainWebpack: (memo) => {
-    memo.module
-      .rule('compile')
-      .test(/\.jsx$/)
-      .use('babel')
-        .loader('babel-loader')
-        // .options({ presets: ['@babel/preset-env'] })
-  }
+  // chainWebpack: (memo) => {
+  //   memo.module
+  //     .rule('compile')
+  //     .test(/\.jsx$/)
+  //     .use('babel')
+  //       .loader('babel-loader')
+  //       // .options({ presets: ['@babel/preset-env'] })
+  // }
 });

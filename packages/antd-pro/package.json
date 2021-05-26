@@ -31,7 +31,8 @@
     "test": "umi test",
     "test:all": "node ./tests/run-tests.js",
     "test:component": "umi test ./src/components",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "v": "umi -v"
   },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
