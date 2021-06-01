@@ -13,8 +13,8 @@ import { useIntl, Link, history, FormattedMessage, SelectLang, useModel } from '
 import Footer from '@/components/Footer';
 import { login } from '@/services/ant-design-pro/api';
 import { getFakeCaptcha } from '@/services/ant-design-pro/login';
-// import { Button } from "@monorepo/my-button";
-import Button from "another-button";
+import { Button } from "@monorepo/my-button";
+// import Button from "another-button";
 
 import styles from './index.less';
 

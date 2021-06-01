@@ -1,12 +1,17 @@
 // https://umijs.org/config/
 import { defineConfig } from 'umi';
 import { join } from 'path';
+import { readdirSync } from 'fs'
 
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
 
 const { REACT_APP_ENV } = process.env;
+
+const allDirectories = readdirSync(join(__dirname, '..', '..'), { withFileTypes: true })
+  .filter(dirent => dirent.isDirectory())
+  .map(dirent => join(__dirname, '..', '..', dirent.name))
 
 export default defineConfig({
   hash: true,
@@ -65,17 +70,5 @@ export default defineConfig({
       projectName: 'swagger',
     },
   ],
-  extraBabelIncludes: [
-    // '@monorepo/my-button',
-    // 'another-button',
-    join(__dirname, 'another-button'),
-  ],
-  // chainWebpack: (memo) => {
-  //   memo.module
-  //     .rule('compile')
-  //     .test(/\.jsx$/)
-  //     .use('babel')
-  //       .loader('babel-loader')
-  //       // .options({ presets: ['@babel/preset-env'] })
-  // }
+  extraBabelIncludes: allDirectories,
 });

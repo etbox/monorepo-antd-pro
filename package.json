@@ -2,5 +2,9 @@
     "private": true,
     "workspaces": [
         "packages/*"
-    ]
+    ],
+    "scripts": {
+        "start": "yarn --cwd packages/antd-pro start",
+        "build": "yarn --cwd packages/antd-pro build"
+    }
 }
